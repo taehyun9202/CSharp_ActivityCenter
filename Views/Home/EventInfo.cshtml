@@ -1,0 +1,19 @@
+@model List<Association>
+<div class="jumbotron">
+    <h1>@ViewBag.getOne.Title</h1>
+    <p><a style="display:inline-block" href="/dashboard">Dashboard</a></p>
+    <p><a style="display:inline-block" href="/logout">Logout</a></p>
+</div>
+
+<div class="col">
+    <h1>Description</h1>
+    <h3>@ViewBag.getOne.Description</h3>
+</div>
+<div class="col">
+    <h1>Participants: @Model.Count</h1>
+    
+    @foreach (var g in Model)
+    {
+        <p>@g.Guest.FirstName @g.Guest.LastName</p>
+    }
+</div>
